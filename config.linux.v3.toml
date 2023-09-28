@@ -14,27 +14,28 @@ auth_url = "https://api.yuzu-emu.org/jwt/installer/"
 
 [[packages]]
 name = "yuzu Early Access"
-description = "Preview release with the newest features for the supporters."
+description = "Preview release with the newest features."
 icon = "thicc_logo_installer__ea_shadow.png"
-requires_authorization = true
+requires_authorization = false
+default = true
 # puts a "new" ribbon the package select
 is_new = true
     [packages.extended_description]
-    no_action_description = "Thank you for your support!"
+    no_action_description = ""
     # Displayed when the package has no authentication for the user
-    need_authentication_description = "Click here to sign in with your yuzu account for Early Access"
+    need_authentication_description = ""
     # Displayed when the package has an authentication, but the user has not linked their account
-    need_link_description = "You are signed in, but you need to link your Patreon account! Click here for more details"
+    need_link_description = ""
     # Displayed when the package has an authentication, but the user has not linked their account
-    need_subscription_description = "You are signed in, but you need to link your Patreon account! Click here for more details"
+    need_subscription_description = ""
     # Displayed when the package has an authentication, but the user has not linked their account
-    need_reward_tier_description = "You are signed in, but are not backing an eligible reward tier! Click here for more details"
+    need_reward_tier_description = ""
 
     [packages.source]
-    name = "patreon"
-    match = "^yuzu-linux-[0-9]*-[0-9a-f]*.tar.xz$"
+    name = "github"
+    match = "^Linux-Yuzu-EA-[0-9]*.AppImage$"
         [packages.source.config]
-        repo = "earlyaccess"
+        repo = "pineappleEA/pineapple-src"
     [[packages.shortcuts]]
     name = "yuzu Early Access"
     relative_path = "yuzu-linux-early-access/yuzu-early-access.AppImage"
